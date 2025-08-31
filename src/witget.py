@@ -3,7 +3,7 @@ from typing import Union
 from src.masks import get_mask_account, get_mask_card_number
 
 
-def mask_account_card(count: Union[int, str]) -> Union[int, str]:
+def mask_account_card(count: str) -> str:
     """функция которая принимает номер счета или карты и маскирует его"""
     list_numbers = []
     list_names = []
@@ -20,8 +20,6 @@ def mask_account_card(count: Union[int, str]) -> Union[int, str]:
         return f'{"".join(list_names)}{(get_mask_card_number("".join(list_numbers)))}'
 
 
-def get_date(dats: Union[int, str]) -> Union[int, str]:
-   data, time = dats.split("T")
-   return ".".join(data.split("-"))
-
-
+def get_date(dats: str) -> str:
+    data, time = dats.split("T")
+    return ".".join(data.split("-"))

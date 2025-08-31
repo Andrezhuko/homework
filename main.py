@@ -1,5 +1,5 @@
 from src.masks import get_mask_account, get_mask_card_number
-from src.witget import mask_account_card, get_date
+from src.witget import get_date, mask_account_card
 
 number_cards = "7000792289606361"
 number_counts = "73654108430135874305"
