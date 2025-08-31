@@ -1,6 +1,6 @@
 from typing import Union
 
-from src.masks import get_mask_account, get_mask_card_n
+from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(count: Union[int, str]) -> Union[int, str]:
