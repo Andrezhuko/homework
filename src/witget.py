@@ -21,5 +21,6 @@ def mask_account_card(count: str) -> str:
 
 
 def get_date(dats: str) -> str:
+    """функция которая принимает дату и время и возвращает дату"""
     data, time = dats.split("T")
-    return ".".join(data.split("-"))
+    return f"{data[8:10]}.{data[5:7]}.{data[:4]}"
