@@ -1,5 +1,3 @@
-
-
 def get_mask_card_number(number_cards: str) -> str:
     """фунция которая маскирует номер карты"""
     if number_cards.isdigit() and len(number_cards) == 16:
