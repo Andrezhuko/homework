@@ -25,3 +25,9 @@ sort_by_date) они находятся в модуле src
 эти функции можно протестировать в файле
 main.py
 
+### Зависимости 
+функции get_mask_card_number и 
+get_mask_account импортируются в файл
+witget.py, filter_by_state и 
+sort_by_date импортируются в файл main.py
+
