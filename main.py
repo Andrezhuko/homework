@@ -1,16 +1,11 @@
-from src.masks import get_mask_account, get_mask_card_number
-from src.witget import get_date, mask_account_card
+from src.processing import filter_by_state, sort_by_date
 
-number_cards = "7000792289606361"
-number_counts = "73654108430135874305"
+list_dicts_info = [
+    {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
+    {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
+    {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
+    {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
+]
 
-cards_name = "Visa Classic 6831982476737228"
-count_name = "Счет 35383033474447895560"
-
-data_info = "2024-03-11T02:26:18.671407"
-
-print(get_date(data_info))
-print(mask_account_card(cards_name))
-print(get_mask_card_number(number_cards))
-print(get_mask_account(number_counts))
-print(mask_account_card(count_name))
+print(sort_by_date(list_dicts_info))
+print(filter_by_state(list_dicts_info))
