@@ -13,7 +13,7 @@ def mask_account_card(count: str) -> str:
         else:
             list_names.append(i)
 
-    if len(list_numbers) == 20:
+    if len(list_numbers) > 16:
         return f'{"".join(list_names)}{(get_mask_account("".join(list_numbers)))}'
 
     else:
