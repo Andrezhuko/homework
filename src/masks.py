@@ -12,4 +12,3 @@ def get_mask_account(number_counts: str) -> str:
         return f"**{number_counts[-4:]}"
     else:
         return "неверный номер счета"
-

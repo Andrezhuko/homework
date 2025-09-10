@@ -1,8 +1,9 @@
 from typing import Generator
 
-def filter_by_currency(list_dicts: list[dict], currency: str="USD") -> Generator:
+
+def filter_by_currency(list_dicts: list[dict], currency: str = "USD") -> Generator:
     """функция которая принимает список словарей и валюту а возвращает итератор"""
-    yield [i for i in list_dicts if i["operationAmount"]["currency"]["code"] == currency]
+    return (i for i in list_dicts if i["operationAmount"]["currency"]["code"] == currency)
 
 
 def transaction_descriptions(list_dicts: list[dict]) -> Generator:
@@ -14,8 +15,7 @@ def transaction_descriptions(list_dicts: list[dict]) -> Generator:
             yield x["description"]
 
 
-
-def card_number_generator(start: int=1, stop: int=5) -> Generator:
+def card_number_generator(start: int = 1, stop: int = 5) -> Generator:
     """генератор который создает номера банковских карт"""
     stop += 1
     for i in range(start, stop):
