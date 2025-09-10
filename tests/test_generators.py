@@ -57,3 +57,4 @@ def test_transaction_descriptions(list_dict_transaction):
 def test_card_number_generator():
     assert next(card_number_generator(1, 4)) == "0000 0000 0000 0001"
     assert next(card_number_generator()) == "0000 0000 0000 0001"
+    assert next(card_number_generator("213121313131313213123")) == "слишком большой диапозон"
