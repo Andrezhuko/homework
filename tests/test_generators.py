@@ -50,11 +50,17 @@ def test_filter_by_currency(list_dict_transaction):
 
 
 def test_transaction_descriptions(list_dict_transaction):
-    assert next(transaction_descriptions(list_dict_transaction)) == "Перевод организации"
+    function_call_one = transaction_descriptions(list_dict_transaction)
+    assert next(function_call_one) == "Перевод организации"
+    assert function_call_one.send(0) == "Перевод со счета на счет"
+    assert function_call_one.send(0) == "Перевод со счета на счет"
     assert next(transaction_descriptions([])) == "пустой список"
 
 
 def test_card_number_generator():
-    assert next(card_number_generator(1, 4)) == "0000 0000 0000 0001"
+    function_call_one = card_number_generator(1, 4)
+    assert next(function_call_one) == "0000 0000 0000 0001"
+    assert function_call_one.send(0) == "0000 0000 0000 0002"
+    assert function_call_one.send(0) == "0000 0000 0000 0003"
     assert next(card_number_generator()) == "0000 0000 0000 0001"
     assert next(card_number_generator("213121313131313213123")) == "слишком большой диапозон"
