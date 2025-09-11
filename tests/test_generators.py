@@ -3,7 +3,7 @@ import pytest
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 
-def test_filter_by_currency(list_dict_transaction):
+def test_filter_by_currency(list_dict_transaction: list[dict]) -> None:
     test_one = filter_by_currency(list_dict_transaction)
     assert next(test_one) == {
         "id": 939719570,
@@ -49,7 +49,7 @@ def test_filter_by_currency(list_dict_transaction):
         assert next(test_four)
 
 
-def test_transaction_descriptions(list_dict_transaction):
+def test_transaction_descriptions(list_dict_transaction: list[dict]) -> None:
     function_call_one = transaction_descriptions(list_dict_transaction)
     assert next(function_call_one) == "Перевод организации"
     assert function_call_one.send(0) == "Перевод со счета на счет"
@@ -57,7 +57,7 @@ def test_transaction_descriptions(list_dict_transaction):
     assert next(transaction_descriptions([])) == "пустой список"
 
 
-def test_card_number_generator():
+def test_card_number_generator() -> None:
     function_call_one = card_number_generator(1, 4)
     assert next(function_call_one) == "0000 0000 0000 0001"
     assert function_call_one.send(0) == "0000 0000 0000 0002"

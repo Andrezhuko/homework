@@ -2,52 +2,52 @@ import pytest
 
 
 @pytest.fixture
-def numbers_card():
+def numbers_card() -> str:
     return "1215454845466546"
 
 
 @pytest.fixture
-def incorrect_numbers_card():
+def incorrect_numbers_card() -> str:
     return "15454845466546"
 
 
 @pytest.fixture
-def numbers_account():
+def numbers_account() -> str:
     return "15644546464448644684"
 
 
 @pytest.fixture
-def incorrect_numbers_account():
+def incorrect_numbers_account() -> str:
     return "934823"
 
 
 @pytest.fixture
-def name_cards():
+def name_cards() -> str:
     return "Visa 1215454845466546"
 
 
 @pytest.fixture
-def incorrect_name_cards():
+def incorrect_name_cards() -> str:
     return "Visa 5454845466546"
 
 
 @pytest.fixture
-def name_account():
+def name_account() -> str:
     return "Счет 15644546464448644684"
 
 
 @pytest.fixture
-def incorrect_name_account():
+def incorrect_name_account() -> str:
     return "Счет 1564454646444864468"
 
 
 @pytest.fixture
-def date_time():
+def date_time() -> str:
     return "2024-03-11T02:26:18.671407"
 
 
 @pytest.fixture
-def list_dict_transaction():
+def list_dict_transaction() -> list[dict]:
     return [
         {
             "id": 939719570,
