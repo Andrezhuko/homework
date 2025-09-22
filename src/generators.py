@@ -19,7 +19,7 @@ def card_number_generator(start: int = 1, stop: int = 5) -> Generator:
     """генератор который принимает диапозон генерации и создает номера банковских карт"""
     stop += 1
     if len(str(start)) > 16 or len(str(stop)) > 16:
-        yield f"слишком большой диапозон"
+        yield "слишком большой диапозон"
     else:
         for i in range(start, stop):
             number_card = str(i).zfill(16)

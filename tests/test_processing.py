@@ -20,7 +20,7 @@ from src.processing import filter_by_state, sort_by_date
         )
     ],
 )
-def test_filter_by_state(x, y):
+def test_filter_by_state(x: list[dict], y: list[dict]) -> None:
     assert filter_by_state(x) == y
 
 
@@ -43,5 +43,5 @@ def test_filter_by_state(x, y):
         )
     ],
 )
-def test_sort_by_date(x, y):
+def test_sort_by_date(x: list[dict], y: list[dict]) -> None:
     assert sort_by_date(x) == y
