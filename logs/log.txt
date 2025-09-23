@@ -23,3 +23,5 @@ func_two ok
 func_two error ZeroDivisionError . Inputs: (1, 0), {}
 func_two ok 
 func_two error ZeroDivisionError . Inputs: (1, 0), {}
+func_two ok 
+func_two error ZeroDivisionError . Inputs: (1, 0), {}
