@@ -36,10 +36,10 @@ def log(filename: str | None = None) -> Callable:
 
 
 @log()
-def func_one(a, b):
+def func_one(a: float, b: float) -> float:
     return a / b
 
 
 @log(filename="logs/log.txt")
-def func_two(a, b):
+def func_two(a: float, b: float) -> float:
     return a / b
