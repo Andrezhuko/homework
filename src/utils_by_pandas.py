@@ -12,7 +12,5 @@ def by_prossering_csv(link_by_csv_file: str) -> Any:
 
 def by_prossering_exe(link_by_exe_file: str) -> Any:
     """фукнция которая принмает эксэль а возвращает список словарей"""
-    if type(link_by_exe_file) == str:
-            return [a for a in pd.read_excel(link_by_exe_file)]
-    else:
-        return "неправильный формат ссылки"
+    return (pd.read_excel(link_by_exe_file)).to_dict(orient='records')
+
