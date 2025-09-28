@@ -19,5 +19,3 @@ def by_prossering_exe(link_by_exe_file: str) -> Any:
     else:
         return "неправильный формат ссылки"
 
-fkld = by_prossering_exe("../data/transactions_excel.xlsx")
-print(fkld.head())
