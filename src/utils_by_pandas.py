@@ -1,9 +1,6 @@
-import csv
 from typing import Any
 
 import pandas as pd
-
-import csv
 
 
 def by_processing_csv(link_by_csv_file: str) -> Any:
@@ -11,13 +8,15 @@ def by_processing_csv(link_by_csv_file: str) -> Any:
     if not isinstance(link_by_csv_file, str):
         raise FileNotFoundError("неверный формат файла или файл отсутсвует")
     else:
-        df = pd.read_csv(link_by_csv_file, delimiter=';')
+        df = pd.read_csv(link_by_csv_file, delimiter=";")
         new_list = []
         for x in df.to_dict(orient="records"):
-            x["operationAmount"] = {"amount": x["amount"], "currency": {"code": x["currency_name"], "name": x["currency_name"]}}
+            x["operationAmount"] = {
+                "amount": x["amount"],
+                "currency": {"code": x["currency_name"], "name": x["currency_name"]},
+            }
             new_list.append(x)
         return new_list
-
 
 
 def by_processing_exe(link_by_exe_file: str) -> Any:
@@ -27,6 +26,9 @@ def by_processing_exe(link_by_exe_file: str) -> Any:
     else:
         new_list = []
         for x in pd.read_excel(link_by_exe_file).to_dict(orient="records"):
-            x["operationAmount"] = {"amount": x["amount"], "currency": {"code": x["currency_name"], "name": x["currency_name"]}}
+            x["operationAmount"] = {
+                "amount": x["amount"],
+                "currency": {"code": x["currency_name"], "name": x["currency_name"]},
+            }
             new_list.append(x)
         return new_list

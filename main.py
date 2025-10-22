@@ -1,27 +1,26 @@
+from src.generators import filter_by_currency
+from src.processing import filter_by_state, sort_by_date
 from src.seach_in_dict import fucntion_by_seach
 from src.utils import by_process_json
-
 from src.utils_by_pandas import by_processing_csv, by_processing_exe
-
-from src.processing import filter_by_state, sort_by_date
-
-from src.generators import filter_by_currency
 from src.witget import get_date, mask_account_card
 
 
 def sorted_dict():
 
     while True:
-        info_by_user_need = input("""
+        info_by_user_need = input(
+            """
             Привет добро пожаловать в программу работы с банковскими транзакцими
             выберите необходимый пункт в меню:
             1. получить информацию из JSON файла
             2. получить информацию из CSV файла
             3. получить информацию из XLSX файла
-            """)
+            """
+        )
         if info_by_user_need == "1":
             print("Для обработки выбран JSON файл")
-            new_file_dict_list =  by_process_json("data/test.json")
+            new_file_dict_list = by_process_json("data/test.json")
             break
         elif info_by_user_need == "2":
             print("Для обработки выбран CSV файл")
@@ -33,7 +32,6 @@ def sorted_dict():
             break
         else:
             print("выбран неверный формат")
-
 
     while True:
         user_1 = input("""Введите статус, по которому необходимо выполнить фильтрацию. 
@@ -102,7 +100,11 @@ def sorted_dict():
         for i in sorted_by_info:
             print(f"{get_date(i["date"])} {i["description"]}")
 
-            if i["description"] == "Перевод с карты на карту" or i["description"] == "Перевод организации" or i["description"] == "Перевод со счета на счет":
+            if (
+                i["description"] == "Перевод с карты на карту"
+                or i["description"] == "Перевод организации"
+                or i["description"] == "Перевод со счета на счет"
+            ):
                 print(f"{mask_account_card(i["from"])} -> {mask_account_card(i["to"])}")
             else:
                 print(mask_account_card(i["to"]))
@@ -110,5 +112,3 @@ def sorted_dict():
 
 
 sorted_dict()
-
-
