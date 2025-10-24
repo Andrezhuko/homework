@@ -24,8 +24,3 @@ def card_number_generator(start: int = 1, stop: int = 5) -> Generator:
         for i in range(start, stop):
             number_card = str(i).zfill(16)
             yield f"{number_card[:4]} {number_card[4:8]} {number_card[8:12]} {number_card[12:]}"
-
-
-print(next(card_number_generator()))
-print(next(card_number_generator()))
-print(next(card_number_generator()))
