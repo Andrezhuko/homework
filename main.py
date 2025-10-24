@@ -17,7 +17,7 @@ while True:
     )
     if info_by_user_need == "1":
         print("Для обработки выбран JSON файл")
-        new_file_dict_list = by_process_json("data/test.json")
+        new_file_dict_list = by_process_json("data/operations.json")
         break
     elif info_by_user_need == "2":
         print("Для обработки выбран CSV файл")
@@ -55,7 +55,7 @@ while True:
                 sorted_by_data_file = sort_by_date(sorted_file, False)
                 break
             elif user_answer_two.lower() == "по убыванию":
-                sorted_by_data_file = sort_by_date(sorted_file, False)
+                sorted_by_data_file = sort_by_date(sorted_file, True)
                 break
             else:
                 print("напишите либо 'по возрастанию' либо 'по убыванию'")
